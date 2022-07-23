@@ -1,4 +1,21 @@
 {
+  "name": "udacity-c2-restapi",
+  "version": "1.0.0",
+  "description": "Rest api server",
+  "main": "./src/server.ts",
+  "scripts": {
+    "start": "node ./www/server.js || echo \"Error: npm run prod first before you can start\"",
+    "tsc": "tsc",
+    "dev": "ts-node-dev ./src/server.ts",
+    "prod": "tsc && node ./www/server.js",
+    "clean": "rimraf www/ || true",
+    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+    "test": "echo \"Erorr: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {"name": "Gabriel Ruttner"},
+  "contributors": ["Jashon Osala"],
+  "license": "ISC",
   "devDependencies": {
     "@types/bluebird": "^3.5.36",
     "@types/express": "^4.17.13",
